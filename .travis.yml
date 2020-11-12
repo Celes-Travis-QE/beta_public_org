@@ -1,5 +1,4 @@
 language: c
-os : linux
 jobs:
   include:
     - os: windows
@@ -7,17 +6,25 @@ jobs:
       script:
         - clang -coverage -O0 hello_world.c -o hello_world
         - ./hello_world
-    - dist: xenial
+    - os : linux
+      dist: xenial
       arch: amd64
       script:
         - clang -coverage -O0 hello_world.c -o hello_world
         - ./hello_world
-    - dist: bionic
+    - os : linux
+      dist: bionic
       arch: amd64
       script:
         - clang -coverage -O0 hello_world.c -o hello_world
         - ./hello_world
-    - dist: focal
+    - os : linux
+      dist: focal
+      arch: amd64
+      script:
+        - clang -coverage -O0 hello_world.c -o hello_world
+        - ./hello_world
+    - os : windows
       arch: amd64
       script:
         - clang -coverage -O0 hello_world.c -o hello_world
